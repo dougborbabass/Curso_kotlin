@@ -2,17 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="539b49ba-36f3-4a75-a618-c2600cb0fc05" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/collections/Collections.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ConceitoWith.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/basics/ConceitoWith.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataClass.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/basics/DataClass.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Herença.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/basics/Herença.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Polimorfismo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/basics/Polimorfismo.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/flowFor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/basics/FlowFor.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/flowWhen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/basics/FlowWhen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/funVarArg.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/basics/FunVarArg.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/basics/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/basics/ConceitoWith.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/basics/conceitoWith.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/basics/DataClass.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/basics/dataClass.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/basics/FlowFor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/basics/flowFor.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/basics/FlowWhen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/basics/flowWhen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/basics/FunVarArg.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/basics/funVarArg.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/basics/Herença.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/basics/herença.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/basics/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/basics/main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/basics/Polimorfismo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/basics/polimorfismo.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/collections/Collections.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/collections/collections.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
