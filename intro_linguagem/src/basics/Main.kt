@@ -1,3 +1,5 @@
+package basics
+
 fun main(){
 
     val a = 10
@@ -13,7 +15,7 @@ fun main(){
 
     println(op)
 
-    calculaBonus(a,b,c)
+    calculaBonus(a, b, c)
     println(hello("Douglas"))
     println(hello2("Douglas 2"))
 }

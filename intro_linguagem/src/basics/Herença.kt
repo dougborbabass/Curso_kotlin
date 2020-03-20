@@ -1,3 +1,5 @@
+package basics
+
 open class Maquina2(val marca: String){
     fun minhaMarca(){
         println("Minha marca é $marca")

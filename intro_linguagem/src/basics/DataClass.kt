@@ -1,4 +1,4 @@
-import com.sun.org.apache.xpath.internal.operations.Bool
+package basics
 
 fun main(){
     val q1 = Quadrado(10f)
@@ -28,6 +28,6 @@ fun teste(p: Param){
 
 }
 
-//fun teste(b: Boolean, s: String, i: Int){
+//fun basics.teste(b: Boolean, s: String, i: Int){
 //
 //}

@@ -1,7 +1,9 @@
+package basics
+
 fun main(){
     media(10f, 8f)
 
-    qualquerTipo(1,false,"doi", 2f)
+    qualquerTipo(1, false, "doi", 2f)
 }
 
 fun media(vararg notas: Float){

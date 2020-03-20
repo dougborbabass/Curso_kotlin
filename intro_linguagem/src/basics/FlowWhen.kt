@@ -1,3 +1,5 @@
+package basics
+
 fun main() {
     operacao(10, 10, "Somar")
     operacao(10, 10, "Subtrair")

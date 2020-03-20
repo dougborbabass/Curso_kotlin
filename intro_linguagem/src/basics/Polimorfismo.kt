@@ -1,3 +1,5 @@
+package basics
+
 interface Funcionario {
     fun calculaBonus()
 }

@@ -1,3 +1,5 @@
+package basics
+
 class Maquina(var marca: String){
 
     fun ligar (){
