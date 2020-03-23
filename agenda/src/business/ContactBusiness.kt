@@ -37,4 +37,14 @@ class ContactBusiness {
             throw Exception("Nome é obrigatório")
         }
     }
+
+    fun getContactCountDescription(): String{
+        val list = getList()
+
+        if(list.isEmpty()){
+            return "0 Contatos"
+        } else {
+            return "${list.size} Contatos"
+        }
+    }
 }
