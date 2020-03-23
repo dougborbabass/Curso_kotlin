@@ -9,4 +9,6 @@
     <string name="calcular">Calcular</string>
     <string name="valor_total_rs">R$ 0</string>
     <string name="km_l">Km/L</string>
+    <string name="preencha_todos_campos">Preenche todos os campos</string>
+    <string name="valores_validos">Informe valores válidos</string>
 </resources>
