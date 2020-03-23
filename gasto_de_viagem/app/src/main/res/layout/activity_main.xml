@@ -5,13 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity"
-    android:padding="10dp">
+    android:padding="16dp"
+    tools:context=".MainActivity">
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:inputType="number"
         android:hint="@string/distancia">
 
     </EditText>
@@ -26,8 +27,9 @@
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_marginTop="32dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:inputType="numberDecimal"
         android:hint="@string/preco">
 
     </EditText>
@@ -61,9 +63,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="64dp"
+        android:text="@string/gasto_total"
         android:textAllCaps="true"
-        android:textSize="18sp"
-        android:text="@string/gasto_total">
+        android:textSize="18sp">
 
     </TextView>
 
@@ -71,22 +73,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:textSize="40sp"
         android:layout_marginTop="16dp"
+        android:text="@string/valor_total_rs"
         android:textColor="@color/darkBlue"
-        android:text="@string/valor_total_rs">
+        android:textSize="40sp">
 
     </TextView>
 
     <Button
-        android:layout_marginTop="16dp"
+        android:id="@+id/buttonCalculate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="25dp"
         android:layout_gravity="center"
+        android:layout_marginTop="16dp"
         android:background="@color/colorPrimary"
+        android:padding="25dp"
+        android:text="@string/calcular"
         android:textColor="@color/white"
-        android:text="@string/calcular">
+        android:textSize="18sp">
 
     </Button>
 
