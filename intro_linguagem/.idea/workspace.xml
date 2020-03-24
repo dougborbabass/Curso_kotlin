@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="539b49ba-36f3-4a75-a618-c2600cb0fc05" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/deeper/highOrder.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -163,19 +162,5 @@
       <screen x="-314" y="-1080" width="1920" height="1040" />
     </state>
     <state x="309" y="-855" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/-314.-1080.1920.1040@-314.-1080.1920.1040" timestamp="1584708666212" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/deeper/highOrder.kt</url>
-          <line>8</line>
-          <properties>
-            <option name="lambda-ordinal" value="-1" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

@@ -4,6 +4,8 @@ fun main(){
     operator(1,2, :: mult)
     operator(1,2, :: sum)
 
+    operator(10, 20) { x, y -> x + y}
+
     val list = listOf(1,2,3)
     list.paraCada { println(it) }
 
