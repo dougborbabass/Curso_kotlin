@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="539b49ba-36f3-4a75-a618-c2600cb0fc05" name="Default Changelist" comment="" />
+    <list default="true" id="539b49ba-36f3-4a75-a618-c2600cb0fc05" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/deeper/highOrder.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,7 +39,20 @@
       <recent name="C:\Users\douglas.borba\Documents\kotlin\Curso_kotlin\intro_linguagem\src\collections" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.collections.CollectionsKt">
+  <component name="RunManager" selected="Kotlin.HighOrderKt">
+    <configuration name="HighOrderKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+      <module name="curso" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="deeper.HighOrderKt" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="basics.FunVarArgKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
       <module name="curso" />
       <option name="VM_PARAMETERS" />
@@ -78,6 +94,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.HighOrderKt" />
         <item itemvalue="Kotlin.collections.CollectionsKt" />
         <item itemvalue="Kotlin.basics.FunVarArgKt" />
         <item itemvalue="Kotlin.basics.MainKt" />
@@ -102,38 +119,42 @@
       <screen x="-314" y="-1080" width="1920" height="1040" />
     </state>
     <state x="437" y="-844" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728/-314.-1080.1920.1040@-314.-1080.1920.1040" timestamp="1584728675678" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1584731165009">
+    <state width="406" height="466" key="DebuggerActiveHint" timestamp="1585061539588">
       <screen x="-314" y="-1080" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1366.728/-314.-1080.1920.1040@-314.-1080.1920.1040" timestamp="1584731165009" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1584731165009">
+    <state width="406" height="466" key="DebuggerActiveHint/0.0.1366.728/-314.-1080.1920.1040@-314.-1080.1920.1040" timestamp="1585061539588" />
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1585061564933">
       <screen x="-314" y="-1080" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1366.728/-314.-1080.1920.1040@-314.-1080.1920.1040" timestamp="1584731165009" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1584731165009">
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom/0.0.1366.728/-314.-1080.1920.1040@-314.-1080.1920.1040" timestamp="1585061564933" />
+    <state width="1877" height="348" key="GridCell.Tab.0.center" timestamp="1585061564933">
       <screen x="-314" y="-1080" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1366.728/-314.-1080.1920.1040@-314.-1080.1920.1040" timestamp="1584731165009" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1584731165009">
+    <state width="1877" height="348" key="GridCell.Tab.0.center/0.0.1366.728/-314.-1080.1920.1040@-314.-1080.1920.1040" timestamp="1585061564933" />
+    <state width="1877" height="348" key="GridCell.Tab.0.left" timestamp="1585061564933">
       <screen x="-314" y="-1080" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1366.728/-314.-1080.1920.1040@-314.-1080.1920.1040" timestamp="1584731165009" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1584706013938">
+    <state width="1877" height="348" key="GridCell.Tab.0.left/0.0.1366.728/-314.-1080.1920.1040@-314.-1080.1920.1040" timestamp="1585061564933" />
+    <state width="1877" height="348" key="GridCell.Tab.0.right" timestamp="1585061564933">
       <screen x="-314" y="-1080" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1366.728/-314.-1080.1920.1040@-314.-1080.1920.1040" timestamp="1584706013938" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1584706013937">
+    <state width="1877" height="348" key="GridCell.Tab.0.right/0.0.1366.728/-314.-1080.1920.1040@-314.-1080.1920.1040" timestamp="1585061564933" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1585061564933">
       <screen x="-314" y="-1080" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1366.728/-314.-1080.1920.1040@-314.-1080.1920.1040" timestamp="1584706013937" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1584706013937">
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1366.728/-314.-1080.1920.1040@-314.-1080.1920.1040" timestamp="1585061564933" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1585061564933">
       <screen x="-314" y="-1080" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1366.728/-314.-1080.1920.1040@-314.-1080.1920.1040" timestamp="1584706013937" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1584706013937">
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1366.728/-314.-1080.1920.1040@-314.-1080.1920.1040" timestamp="1585061564933" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1585061564933">
       <screen x="-314" y="-1080" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1366.728/-314.-1080.1920.1040@-314.-1080.1920.1040" timestamp="1584706013937" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1366.728/-314.-1080.1920.1040@-314.-1080.1920.1040" timestamp="1585061564933" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1585061564933">
+      <screen x="-314" y="-1080" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1366.728/-314.-1080.1920.1040@-314.-1080.1920.1040" timestamp="1585061564933" />
     <state x="147" y="-918" key="SettingsEditor" timestamp="1584629907896">
       <screen x="-314" y="-1080" width="1920" height="1040" />
     </state>
@@ -142,5 +163,19 @@
       <screen x="-314" y="-1080" width="1920" height="1040" />
     </state>
     <state x="309" y="-855" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/-314.-1080.1920.1040@-314.-1080.1920.1040" timestamp="1584708666212" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/deeper/highOrder.kt</url>
+          <line>8</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
