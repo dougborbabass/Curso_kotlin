@@ -11,7 +11,7 @@ fun main(){
     operator(10, 20, fun(n1: Int, n2: Int): Int {
         return n1 + n2
     })
-
+ 
     val list = listOf(1,2,3)
     list.paraCada { println(it) }
 
