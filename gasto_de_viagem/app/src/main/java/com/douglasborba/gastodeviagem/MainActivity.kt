@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 val totalValue = (distance * price) / autonomy
 
                 textTotalValeu.text = "R$ ${"%.2f".format(totalValue)}"
-                
+
             } catch (nfe: NumberFormatException) {
                 Toast.makeText(this, getString(R.string.valores_validos), Toast.LENGTH_LONG).show()
             }
