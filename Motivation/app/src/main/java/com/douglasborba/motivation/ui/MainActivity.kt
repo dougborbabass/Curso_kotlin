@@ -1,5 +1,6 @@
 package com.douglasborba.motivation.ui
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -14,6 +15,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var mSecurityPreferences: SecurityPreferences
     private var mPhraseFilter: Int = MotivationConstants.PHRASEFILTER.ALL
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -21,7 +23,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         supportActionBar?.hide()
 
         mSecurityPreferences = SecurityPreferences(this)
-        textHello.text = mSecurityPreferences.getString("name")
+        val name = mSecurityPreferences.getString("name")
+        textHello.text = "Olá, $name"
 
         //iniciar selecionado
         imageAll.setColorFilter(resources.getColor(R.color.colorAccent))
