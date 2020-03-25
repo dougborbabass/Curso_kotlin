@@ -71,7 +71,7 @@
     </View>
 
     <Button
-        android:id="@+id/buttonNovaFrase"
+        android:id="@+id/buttonNewPhrase"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
