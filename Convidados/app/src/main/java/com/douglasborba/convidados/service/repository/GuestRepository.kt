@@ -50,6 +50,7 @@ class GuestRepository private constructor(context: Context) {
             contentValues.put(DataBaseConstants.GUEST.COLUMNS.NAME, guest.name)
             contentValues.put(DataBaseConstants.GUEST.COLUMNS.PRESENCE, guest.presence)
 
+            //critério de busca
             val selection = DataBaseConstants.GUEST.COLUMNS.ID + " = ?"
             val args = arrayOf(guest.id.toString())
 
@@ -62,7 +63,21 @@ class GuestRepository private constructor(context: Context) {
         }
     }
 
-    fun delete(guest: GuestModel) {
+    fun delete(id: Int): Boolean {
+        return try {
+            val db = mGuestDataBaseHelper.writableDatabase
+
+            //critério de busca
+            val selection = DataBaseConstants.GUEST.COLUMNS.ID + " = ?"
+            val args = arrayOf(id.toString())
+
+            db.delete(DataBaseConstants.GUEST.TABLE_NAME, selection, args)
+
+            true
+
+        } catch (e: Exception) {
+            false
+        }
     }
 
     fun getAll(): List<GuestModel> {
