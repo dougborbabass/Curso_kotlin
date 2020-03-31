@@ -1,4 +1,4 @@
-package com.douglasborba.convidados.ui.home
+package com.douglasborba.convidados.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

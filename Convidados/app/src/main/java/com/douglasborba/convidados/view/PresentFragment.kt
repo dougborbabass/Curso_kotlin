@@ -1,4 +1,4 @@
-package com.douglasborba.convidados.ui.home
+package com.douglasborba.convidados.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,21 +9,22 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.douglasborba.convidados.R
+import com.douglasborba.convidados.viewmodel.PresentViewModel
 
-class AllGuestFragment : Fragment() {
+class PresentFragment : Fragment() {
 
-    private lateinit var homeViewModel: AllGuestsViewModel
+    private lateinit var galleryViewModel: PresentViewModel
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        homeViewModel =
-                ViewModelProviders.of(this).get(AllGuestsViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_home, container, false)
-        val textView: TextView = root.findViewById(R.id.text_home)
-        homeViewModel.text.observe(viewLifecycleOwner, Observer {
+        galleryViewModel =
+                ViewModelProviders.of(this).get(PresentViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_gallery, container, false)
+        val textView: TextView = root.findViewById(R.id.text_gallery)
+        galleryViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root

@@ -1,4 +1,4 @@
-package com.douglasborba.convidados.ui.slideshow
+package com.douglasborba.convidados.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.douglasborba.convidados.R
+import com.douglasborba.convidados.viewmodel.AbsentViewModel
 
 class AbsentFragment : Fragment() {
 
