@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -13,15 +12,15 @@ import androidx.recyclerview.widget.RecyclerView
 import com.douglasborba.convidados.R
 import com.douglasborba.convidados.view.adapter.GuestAdapter
 import com.douglasborba.convidados.viewmodel.AllGuestsViewModel
-import kotlinx.android.synthetic.main.fragment_all_guest.*
-import kotlinx.android.synthetic.main.fragment_all_guest.view.*
 
 class AllGuestFragment : Fragment() {
 
-    private lateinit var homeViewModel: AllGuestsViewModel
+    private val mAdapter: GuestAdapter = GuestAdapter()
+
+    private lateinit var allGuestsViewModel: AllGuestsViewModel
 
     override fun onCreateView(inflater: LayoutInflater,container: ViewGroup?,savedInstanceState: Bundle?): View? {
-        homeViewModel = ViewModelProvider(this).get(AllGuestsViewModel::class.java)
+        allGuestsViewModel = ViewModelProvider(this).get(AllGuestsViewModel::class.java)
 
         val root = inflater.inflate(R.layout.fragment_all_guest, container, false)
 
@@ -32,8 +31,18 @@ class AllGuestFragment : Fragment() {
         recycler.layoutManager = LinearLayoutManager(root.context)
 
         // 3 - definir um adapter
-        recycler.adapter = GuestAdapter()
+        recycler.adapter = mAdapter
+
+        observer()
+
+        allGuestsViewModel.load()
 
         return root
+    }
+
+    private fun observer(){
+        allGuestsViewModel.guestList.observe(viewLifecycleOwner, Observer {
+            mAdapter.updateGuests(it)
+        })
     }
 }
