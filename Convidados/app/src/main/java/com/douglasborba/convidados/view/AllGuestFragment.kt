@@ -14,20 +14,16 @@ import com.douglasborba.convidados.R
 import com.douglasborba.convidados.service.constants.GuestConstants
 import com.douglasborba.convidados.view.adapter.GuestAdapter
 import com.douglasborba.convidados.view.listener.GuestListener
-import com.douglasborba.convidados.viewmodel.AllGuestsViewModel
+import com.douglasborba.convidados.viewmodel.GuestsViewModel
 
 class AllGuestFragment : Fragment() {
 
     private val mAdapter: GuestAdapter = GuestAdapter()
-    private lateinit var mViewModel: AllGuestsViewModel
+    private lateinit var mViewModel: GuestsViewModel
     private lateinit var mListener: GuestListener
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        mViewModel = ViewModelProvider(this).get(AllGuestsViewModel::class.java)
+    override fun onCreateView(inflater: LayoutInflater,container: ViewGroup?,s: Bundle?): View? {
+        mViewModel = ViewModelProvider(this).get(GuestsViewModel::class.java)
 
         val root = inflater.inflate(R.layout.fragment_all_guest, container, false)
 
@@ -55,7 +51,7 @@ class AllGuestFragment : Fragment() {
 
             override fun onDelete(id: Int) {
                 mViewModel.delete(id)
-                mViewModel.load()
+                mViewModel.load(GuestConstants.FILTER.EMPTY)
             }
         }
 
@@ -67,7 +63,7 @@ class AllGuestFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        mViewModel.load()
+        mViewModel.load(GuestConstants.FILTER.EMPTY)
     }
 
     private fun observer() {
