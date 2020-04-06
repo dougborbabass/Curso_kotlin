@@ -60,6 +60,7 @@ class AbsentFragment : Fragment() {
 
         return root
     }
+    
 
     override fun onResume() {
         super.onResume()
