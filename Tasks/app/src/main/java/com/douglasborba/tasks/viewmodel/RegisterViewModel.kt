@@ -21,6 +21,6 @@ class RegisterViewModel(application: Application) : AndroidViewModel(application
             this.email = email
             this.password = password
         }
-        mSaveUser.value = mUserRepository.insert(user)
+        mUserRepository.insert(user)
     }
 }
