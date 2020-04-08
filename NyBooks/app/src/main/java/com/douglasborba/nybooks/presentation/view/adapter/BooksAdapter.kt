@@ -1,11 +1,11 @@
-package com.douglasborba.nybooks.presentation.books.adapter
+package com.douglasborba.nybooks.presentation.view.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.douglasborba.nybooks.R
 import com.douglasborba.nybooks.data.model.BooksModel
-import com.douglasborba.nybooks.presentation.books.viewholder.BooksViewHolder
+import com.douglasborba.nybooks.presentation.view.viewholder.BooksViewHolder
 
 class BooksAdapter(private val books: List<BooksModel>) : RecyclerView.Adapter<BooksViewHolder>() {
 

@@ -1,7 +1,6 @@
-package com.douglasborba.nybooks.presentation.books.viewholder
+package com.douglasborba.nybooks.presentation.view.viewholder
 
 import android.view.View
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.douglasborba.nybooks.data.model.BooksModel
 import kotlinx.android.synthetic.main.item_book.view.*
