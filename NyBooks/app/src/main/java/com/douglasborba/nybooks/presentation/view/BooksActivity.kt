@@ -25,7 +25,7 @@ class BooksActivity : AppCompatActivity() {
         val viewModel: BooksViewModel = ViewModelProvider(this).get(BooksViewModel::class.java)
 
         viewModel.booksLiveData.observe(this, Observer {
-            it?.let {books ->
+            it?.let { books ->
                 with(recycler_books){
                     layoutManager = LinearLayoutManager(this@BooksActivity, RecyclerView.VERTICAL, false)
                     setHasFixedSize(true)
