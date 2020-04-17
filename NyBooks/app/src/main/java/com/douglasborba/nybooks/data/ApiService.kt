@@ -15,5 +15,5 @@ object ApiService {
     }
 
     //Vincula o retrofit a classe que contem os endpoint da api
-    val service = initRetrofit().create(NYTServices::class.java)
+    val service: NYTServices = initRetrofit().create(NYTServices::class.java)
 }
