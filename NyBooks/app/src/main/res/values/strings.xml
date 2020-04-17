@@ -2,5 +2,8 @@
     <string name="app_name">NyBooks</string>
 
     <!--Books Activity-->
-    <string name="toolbar_name">Books</string>
+    <string name="book_title">Books</string>
+
+    <!--Books Activity-->
+    <string name="book_details">Books Details</string>
 </resources>
