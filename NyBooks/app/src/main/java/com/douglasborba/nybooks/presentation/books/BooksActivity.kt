@@ -26,14 +26,28 @@ class BooksActivity : BaseActivity() {
 
         viewModel.booksLiveData.observe(this, Observer {
             it?.let { books ->
-                with(recycler_books){
-                    layoutManager = LinearLayoutManager(this@BooksActivity, RecyclerView.VERTICAL, false)
+                with(recycler_books) {
+                    layoutManager =
+                        LinearLayoutManager(this@BooksActivity, RecyclerView.VERTICAL, false)
                     setHasFixedSize(true)
                     // ao implementar o adapter a callback do click em lambda é usada
                     adapter = BooksAdapter(books) { book ->
-                        val intent = BookDetailsActivity.getStartIntent(this@BooksActivity, book.title, book.description)
+                        val intent = BookDetailsActivity.getStartIntent(
+                            this@BooksActivity,
+                            book.title,
+                            book.description
+                        )
                         this@BooksActivity.startActivity(intent)
                     }
+                }
+            }
+        })
+
+        viewModel.viewFlipperLiveData.observe(this, Observer {
+            it?.let { viewFlipper ->
+                view_flipper_books.displayedChild = viewFlipper.first
+                viewFlipper.second?.let { msgError ->
+                    text_error.text = getString(msgError)
                 }
             }
         })
