@@ -1,4 +1,4 @@
-package com.douglasborba.nybooks.viewmodel
+package com.douglasborba.nybooks.presentation.books.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -23,7 +23,8 @@ class BooksViewModel : ViewModel() {
                         for (result in bookBodyResponse.bookResults){
                             val book = BooksModel(
                                 title = result.bookDetails[0].title,
-                                author = result.bookDetails[0].author
+                                author = result.bookDetails[0].author,
+                                description = result.bookDetails[0].description
                             )
                             books.add(book)
                         }

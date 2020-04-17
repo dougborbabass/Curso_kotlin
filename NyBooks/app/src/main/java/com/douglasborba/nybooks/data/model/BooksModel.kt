@@ -1,3 +1,3 @@
 package com.douglasborba.nybooks.data.model
 
-data class BooksModel(val title:String, val author:String)
+data class BooksModel(val title:String, val author:String, val description: String)
