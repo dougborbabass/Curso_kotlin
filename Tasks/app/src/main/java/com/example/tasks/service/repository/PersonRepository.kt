@@ -25,7 +25,7 @@ class PersonRepository(val context: Context) {
 
                 if (response.code() != TaskConstants.HTTP.SUCCESS){
                     // o errorbody ainda esta em json, por isso deve ser feito a conversão da msg antes de enviar para a interface
-                    val validation = Gson().fromJson(response.errorBody().toString(), String::class.java)
+                    val validation = Gson().fromJson(response.errorBody()!!.string(), String::class.java)
                     listener.onFailure(validation)
                 } else {
                     response.body()?.let {
