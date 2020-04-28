@@ -1,5 +1,6 @@
 package com.example.tasks.view
 
+import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,6 +10,7 @@ import android.widget.DatePicker
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.example.tasks.R
+import com.example.tasks.service.constants.TaskConstants
 import com.example.tasks.service.model.TaskModel
 import com.example.tasks.viewmodel.RegisterViewModel
 import com.example.tasks.viewmodel.TaskFormViewModel
@@ -24,6 +26,7 @@ class TaskFormActivity : AppCompatActivity(), View.OnClickListener,
     private lateinit var mViewModel: TaskFormViewModel
     private val mDateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH)
     private val mListPriorityId: MutableList<Int> = arrayListOf()
+    private var mTaskId = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +39,8 @@ class TaskFormActivity : AppCompatActivity(), View.OnClickListener,
         observe()
 
         mViewModel.listPriorities()
+
+        loadDataFromActivity()
     }
 
     override fun onClick(v: View) {
@@ -47,34 +52,17 @@ class TaskFormActivity : AppCompatActivity(), View.OnClickListener,
         }
     }
 
-    private fun observe() {
-        mViewModel.priorities.observe(this, androidx.lifecycle.Observer {
-
-            val list: MutableList<String> = arrayListOf()
-            for (item in it) {
-                list.add(item.description)
-                mListPriorityId.add(item.id)
-            }
-            val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, list)
-            spinner_priority.adapter = adapter
-        })
-
-        mViewModel.validation.observe(this, androidx.lifecycle.Observer {
-            if (it.success()) {
-                Toast.makeText(this, "Sucesso", Toast.LENGTH_SHORT).show()
-            } else {
-                Toast.makeText(this, it.failure(), Toast.LENGTH_SHORT).show()
-            }
-        })
-    }
-
-    private fun listeners() {
-        button_save.setOnClickListener(this)
-        button_date.setOnClickListener(this)
+    private fun loadDataFromActivity(){
+        val bundle = intent.extras
+        if (bundle != null){
+            mTaskId = bundle.getInt(TaskConstants.BUNDLE.TASKID)
+            mViewModel.load(mTaskId)
+        }
     }
 
     private fun handleSave() {
         val task = TaskModel().apply {
+            this.id = mTaskId
             this.description = edit_description.text.toString()
             this.complete = check_complete.isChecked
             this.dueDate = button_date.text.toString()
@@ -101,4 +89,51 @@ class TaskFormActivity : AppCompatActivity(), View.OnClickListener,
         button_date.text = str
     }
 
+    @SuppressLint("SimpleDateFormat")
+    private fun observe() {
+        mViewModel.priorities.observe(this, androidx.lifecycle.Observer {
+
+            val list: MutableList<String> = arrayListOf()
+            for (item in it) {
+                list.add(item.description)
+                mListPriorityId.add(item.id)
+            }
+            val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, list)
+            spinner_priority.adapter = adapter
+        })
+
+        mViewModel.validation.observe(this, androidx.lifecycle.Observer {
+            if (it.success()) {
+                Toast.makeText(this, "Sucesso", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, it.failure(), Toast.LENGTH_SHORT).show()
+            }
+        })
+
+        mViewModel.task.observe(this, androidx.lifecycle.Observer {
+            edit_description.setText(it.description)
+            check_complete.isChecked = it.complete
+
+            spinner_priority.setSelection(getIndex(it.priorityId))
+
+            val date = SimpleDateFormat("yyyy-MM-dd").parse(it.dueDate)
+            button_date.text = mDateFormat.format(date)
+        })
+    }
+
+    private fun getIndex(priorityId: Int): Int{
+        var index = 0
+        for (i in 0 until mListPriorityId.count()){
+            if (mListPriorityId[i] == priorityId){
+                index = i
+                break
+            }
+        }
+        return index
+    }
+
+    private fun listeners() {
+        button_save.setOnClickListener(this)
+        button_date.setOnClickListener(this)
+    }
 }

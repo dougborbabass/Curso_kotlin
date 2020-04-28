@@ -17,7 +17,7 @@ interface TaskService {
     fun overdue(): Call<List<TaskModel>>
 
     @GET("Task/{id}")
-    fun load(@Path(value = "id", encoded = true) id: Int): Call<List<TaskModel>>
+    fun load(@Path(value = "id", encoded = true) id: Int): Call<TaskModel>
 
     @POST("Task")
     @FormUrlEncoded
@@ -29,8 +29,9 @@ interface TaskService {
     ): Call<Boolean>
 
     @HTTP(method = "PUT", path = "Task", hasBody = true)
+    @FormUrlEncoded
     fun update(
-        @Field("Id") id: Int,
+        @Field("Id") Id: Int,
         @Field("PriorityId") priorityId: Int,
         @Field("Description") description: String,
         @Field("DueDate") dueDate: String,

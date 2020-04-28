@@ -19,6 +19,35 @@ class TaskRepository(val context: Context) {
             TaskService::class.java
         )
 
+    fun updateStatus(id:Int, complete: Boolean, listener: APIListener<Boolean>){
+
+        val call: Call<Boolean> = if (complete){
+            mRemote.complete(id)
+        } else {
+            mRemote.undo(id)
+        }
+
+        call.enqueue(object : Callback<Boolean> {
+            override fun onFailure(call: Call<Boolean>, t: Throwable) {
+                listener.onFailure(context.getString(R.string.ERROR_UNEXPECTED))
+            }
+
+            override fun onResponse(call: Call<Boolean>, response: Response<Boolean>) {
+                if (response.code() != TaskConstants.HTTP.SUCCESS) {
+                    // o errorbody ainda esta em json, por isso deve ser feito a conversão da msg antes de enviar para a interface
+                    val validation =
+                        Gson().fromJson(response.errorBody()!!.string(), String::class.java)
+                    listener.onFailure(validation)
+                } else {
+                    response.body()?.let {
+                        listener.onSuccess(it)
+                    }
+                }
+            }
+
+        })
+    }
+
     fun all(listener: APIListener<List<TaskModel>>) {
         val call: Call<List<TaskModel>> = mRemote.all()
         list(call, listener)
@@ -68,6 +97,78 @@ class TaskRepository(val context: Context) {
             }
 
             override fun onResponse(call: Call<Boolean>, response: Response<Boolean>) {
+                if (response.code() != TaskConstants.HTTP.SUCCESS) {
+                    // o errorbody ainda esta em json, por isso deve ser feito a conversão da msg antes de enviar para a interface
+                    val validation =
+                        Gson().fromJson(response.errorBody()!!.string(), String::class.java)
+                    listener.onFailure(validation)
+                } else {
+                    response.body()?.let {
+                        listener.onSuccess(it)
+                    }
+                }
+            }
+
+        })
+    }
+
+    fun update(task: TaskModel, listener: APIListener<Boolean>) {
+        val call: Call<Boolean> =
+            mRemote.update(task.id, task.priorityId, task.description, task.dueDate, task.complete)
+        call.enqueue(object : Callback<Boolean> {
+            override fun onFailure(call: Call<Boolean>, t: Throwable) {
+                listener.onFailure(context.getString(R.string.ERROR_UNEXPECTED))
+            }
+
+            override fun onResponse(call: Call<Boolean>, response: Response<Boolean>) {
+                if (response.code() != TaskConstants.HTTP.SUCCESS) {
+                    // o errorbody ainda esta em json, por isso deve ser feito a conversão da msg antes de enviar para a interface
+                    val validation =
+                        Gson().fromJson(response.errorBody()!!.string(), String::class.java)
+                    listener.onFailure(validation)
+                } else {
+                    response.body()?.let {
+                        listener.onSuccess(it)
+                    }
+                }
+            }
+
+        })
+    }
+
+    fun delete(id: Int, listener: APIListener<Boolean>) {
+        val call: Call<Boolean> = mRemote.delete(id)
+        call.enqueue(object : Callback<Boolean> {
+            override fun onFailure(call: Call<Boolean>, t: Throwable) {
+                listener.onFailure(context.getString(R.string.ERROR_UNEXPECTED))
+            }
+
+            override fun onResponse(call: Call<Boolean>, response: Response<Boolean>) {
+                if (response.code() != TaskConstants.HTTP.SUCCESS) {
+                    // o errorbody ainda esta em json, por isso deve ser feito a conversão da msg antes de enviar para a interface
+                    val validation =
+                        Gson().fromJson(response.errorBody()!!.string(), String::class.java)
+                    listener.onFailure(validation)
+                } else {
+                    response.body()?.let {
+                        listener.onSuccess(it)
+                    }
+                }
+            }
+
+        })
+    }
+
+
+    fun load(id: Int, listener: APIListener<TaskModel>) {
+        val call: Call<TaskModel> =
+            mRemote.load(id)
+        call.enqueue(object : Callback<TaskModel> {
+            override fun onFailure(call: Call<TaskModel>, t: Throwable) {
+                listener.onFailure(context.getString(R.string.ERROR_UNEXPECTED))
+            }
+
+            override fun onResponse(call: Call<TaskModel>, response: Response<TaskModel>) {
                 if (response.code() != TaskConstants.HTTP.SUCCESS) {
                     // o errorbody ainda esta em json, por isso deve ser feito a conversão da msg antes de enviar para a interface
                     val validation =
